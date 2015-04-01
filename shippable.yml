@@ -6,7 +6,7 @@ lein:
   - lein2
 
 
-build_image: shippableimages/ubuntu1204_clojure:0.0.2
+build_image: shippableimages/ubuntu1204_clojure
 
 # Create directories for test and coverage reports
 before_script:
@@ -17,3 +17,7 @@ before_script:
 script:
   - cd sample
   - lein test
+after_success:
+  - echo "success"
+after_failure:
+  - echo "failed"
